@@ -1,4 +1,4 @@
-const = schedule = require('node-schedule')
+const schedule = require('node-schedule')
 
 module.exports = app => {
     schedule.scheduleJob('*/1 * * * *', async function () {
@@ -22,7 +22,7 @@ module.exports = app => {
         const changeArticles = !lastStat || stat.articles !== lastStat.articles
 
         if (changeUsers || changeCategories || changeArticles) {
-            stat.save().then((=> console.log('[Stats] Estatísticas atualizadas!')))
+            stat.save().then(() => console.log('[Stats] Estatísticas atualizadas!'))
         }
     })
 };
